@@ -13,7 +13,7 @@ namespace LeetCodeTraining.TwoSum1
                 {
                     return new int[] { i, numsDict[targetLeft] };
                 }
-                else numsDict.TryAdd(nums[i], i);
+                numsDict.TryAdd(nums[i], i);
             }
             return new int[] { };
         }
