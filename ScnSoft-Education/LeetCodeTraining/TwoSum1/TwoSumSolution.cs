@@ -1,9 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace LeetCodeTraining.TwoSum1
 {
     //https://leetcode.com/problems/two-sum/
@@ -20,14 +14,8 @@ namespace LeetCodeTraining.TwoSum1
                         return new int[] { i, j };
                     }
                 }
-
             }
             return new int[] { };
-        }
-
-        public void Main(string[] args)
-        {
-
         }
     }
 }
