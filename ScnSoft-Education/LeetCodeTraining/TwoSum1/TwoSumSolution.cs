@@ -5,15 +5,15 @@ namespace LeetCodeTraining.TwoSum1
     {
         public static int[] TwoSum(int[] nums, int target)
         {
+            Dictionary<int, int> numsDict = new Dictionary<int, int>();
             for (int i = 0; i < nums.Length; i++)
             {
-                for (int j = i + 1; j <= nums.Length - 1; j++)
+                int targetLeft = target - nums[i];
+                if (numsDict.ContainsKey(targetLeft))
                 {
-                    if (nums[i] + nums[j] == target)
-                    {
-                        return new int[] { i, j };
-                    }
+                    return new int[] { i, numsDict[targetLeft] };
                 }
+                else numsDict.TryAdd(nums[i], i);
             }
             return new int[] { };
         }
