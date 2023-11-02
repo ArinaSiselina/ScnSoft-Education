@@ -19,10 +19,12 @@ namespace LeetCodeTraining.Tests
             int[] nums3 = new int[] { 2,7,11,15 };
             int target3 = 9;
             int[] expectedResults3 = new int[] { 0, 1 };
+            
             //Act
             int[] Result1 = TwoSumSolution.TwoSum(nums1, target1);
             int[] Result2 = TwoSumSolution.TwoSum(nums2, target2);
             int[] Result3 = TwoSumSolution.TwoSum(nums3, target3);
+            
             //Assert
             Assert.Equal(expectedResults1.Length, Result1.Length);
             Array.Sort(Result1);
@@ -36,14 +38,14 @@ namespace LeetCodeTraining.Tests
             for (int i = 0; i < expectedResults2.Length; i++)
             {
                 Assert.Equal(expectedResults2[i], Result2[i]);
-                
+            }
+            
             Assert.Equal(expectedResults3.Length, Result3.Length);
             Array.Sort(Result3);
             for (int i = 0; i < expectedResults3.Length; i++)
             {
                 Assert.Equal(expectedResults3[i], Result3[i]);
             }
-            } 
         }
     }
 }
