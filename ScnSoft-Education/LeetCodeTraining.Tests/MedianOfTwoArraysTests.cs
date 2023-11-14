@@ -11,10 +11,10 @@ namespace LeetCodeTraining.Tests
         public void MedianOfTwoArrays(int[] nums1, int[] nums2, double expectedResult)
         {
             //Act
-            double Result = MedianOfTwoArraysSolution.FindMedianSortedArrays(nums1, nums2);
+            double result = MedianOfTwoArraysSolution.FindMedianSortedArrays(nums1, nums2);
 
             //Assert
-            Assert.Equal(expectedResult, Result);
+            Assert.Equal(expectedResult, result);
         }
     }
 }
