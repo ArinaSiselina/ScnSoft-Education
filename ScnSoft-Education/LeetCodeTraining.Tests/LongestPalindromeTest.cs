@@ -2,7 +2,7 @@
 
 namespace LeetCodeTraining.Tests
 {
-    public class longestPalindromeSolutionTest
+    public class LongestPalindromeSolutionTest
     {
         [Theory]
         [InlineData("babad", "aba")]
