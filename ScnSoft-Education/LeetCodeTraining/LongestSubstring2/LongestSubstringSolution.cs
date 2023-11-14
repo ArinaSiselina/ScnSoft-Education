@@ -1,21 +1,24 @@
-namespace LeetCodeTraining.TwoSum1
+namespace LeetCodeTraining.LongestSubstring1
 {
-    //https://leetcode.com/problems/two-sum/
-    public class TwoSumSolution
+
+    public class SubstringSolution
     {
-        public static int[] TwoSum(int[] nums, int target)
+        public static int LengthOfLongestSubstring(string s)
         {
-            Dictionary<int, int> numsDict = new Dictionary<int, int>();
-            for (int i = 0; i < nums.Length; i++)
+            int maxLength = 0;
+            int start = 0;
+
+            for (int i = 0; i < s.Length; i++)
             {
-                int targetLeft = target - nums[i];
-                if (numsDict.ContainsKey(targetLeft))
+                char currentChar = s[i];
+                int index = s.IndexOf(currentChar, start, i - start);
+                if (index != -1)
                 {
-                    return new int[] { i, numsDict[targetLeft] };
+                    start = index + 1;
                 }
-                numsDict.TryAdd(nums[i], i);
+                maxLength = Math.Max(maxLength, i - start + 1);
             }
-            return new int[] { };
+            return maxLength;
         }
     }
 }
