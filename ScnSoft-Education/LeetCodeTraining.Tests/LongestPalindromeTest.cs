@@ -11,10 +11,10 @@ namespace LeetCodeTraining.Tests
         public void LongestPalindrome(string s, string expectedResult)
         {
             //Act
-            string Result = LongestPalindromeSolution.LongestPalindrome(s);
+            string result = LongestPalindromeSolution.LongestPalindrome(s);
 
             //Assert
-            Assert.Equal(expectedResult, Result);
+            Assert.Equal(expectedResult, result);
         }
     }
 }
