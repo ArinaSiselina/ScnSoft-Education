@@ -1,6 +1,6 @@
 ﻿namespace LeetCodeTraining.LongestPalindrome
 {
-    //https://leetcode.com/problems/palindrome-number/description/
+    //https://leetcode.com/problems/longest-palindromic-substring/
     public class LongestPalindromeSolution
     {
         public static string LongestPalindrome(string s)
