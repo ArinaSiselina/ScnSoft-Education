@@ -1,6 +1,6 @@
 namespace LeetCodeTraining.LongestSubstring1
 {
-    //https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
     public class SubstringSolution
     {
         public static int LengthOfLongestSubstring(string s)
