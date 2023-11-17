@@ -35,7 +35,7 @@
             {
                 return (merged[n / 2 - 1] + merged[n / 2]) / 2.0;
             }
-            67return merged[n / 2];
+            return merged[n / 2];
         }
     }
 }
