@@ -11,8 +11,8 @@
                 int digit = x % 10;
                 x /= 10;
                 if ((reversedX > int.MaxValue / 10 || (reversedX == int.MaxValue / 10 && digit > 7))
-                ||
-                (reversedX < int.MinValue / 10 || (reversedX == int.MinValue / 10 && digit < -8)))
+                    ||
+                    (reversedX < int.MinValue / 10 || (reversedX == int.MinValue / 10 && digit < -8)))
                 {
                     return 0;
                 }
@@ -22,3 +22,4 @@
         }
     }
 }
+
