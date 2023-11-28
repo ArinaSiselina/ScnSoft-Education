@@ -18,13 +18,15 @@
             }
 
             long result = 0;
-            while (index < s.Length && Char.IsDigit(s[index]))
+
+            while (index < s.Length && char.IsDigit(s[index]))
             {
-                result = result * 10 + (int)Char.GetNumericValue(s[index]);
+                result = result * 10 + (int)char.GetNumericValue(s[index]);
                 if (isNegative && -result < int.MinValue) return int.MinValue;
                 if (!isNegative && result > int.MaxValue) return int.MaxValue;
                 index++;
             }
+
             return isNegative ? (int)-result : (int)result;
         }
     }

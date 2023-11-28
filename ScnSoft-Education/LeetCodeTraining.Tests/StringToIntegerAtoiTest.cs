@@ -11,10 +11,10 @@ namespace LeetCodeTraining.Tests
         public void StringToIntegerAtoi(string s, int expectedResult)
         {
             //Act
-            int Result = StringToIntegerAtoiSolution.MyAtoi(s);
+            int result = StringToIntegerAtoiSolution.MyAtoi(s);
 
             //Assert
-            Assert.Equal(expectedResult, Result);
+            Assert.Equal(expectedResult, result);
         }
     }
 }
