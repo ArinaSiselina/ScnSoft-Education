@@ -11,10 +11,10 @@ namespace LeetCodeTraining.Tests
         public void ReverseInteger(int x, int expectedResult)
         {
             //Act
-            int Result = ReverseIntegerSolution.Reverse(x);
+            int result = ReverseIntegerSolution.Reverse(x);
 
             //Assert
-            Assert.Equal(expectedResult, Result);
+            Assert.Equal(expectedResult, result);
         }
     }
 }

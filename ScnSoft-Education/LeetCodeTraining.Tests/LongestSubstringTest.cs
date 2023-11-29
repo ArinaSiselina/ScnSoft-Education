@@ -11,10 +11,10 @@ namespace LeetCodeTraining.Tests
         public void LongestSubstring(string s, int expectedResult)
         {
             //Act
-            int Result = SubstringSolution.LengthOfLongestSubstring(s);
+            int result = SubstringSolution.LengthOfLongestSubstring(s);
             
             //Assert
-            Assert.Equal(expectedResult, Result);
+            Assert.Equal(expectedResult, result);
         }
     }
 }
