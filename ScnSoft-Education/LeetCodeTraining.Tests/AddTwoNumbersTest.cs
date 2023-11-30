@@ -8,11 +8,13 @@ namespace LeetCodeTraining.Tests
             {
                 ListNode head = new ListNode(numbers[0]);
                 ListNode current = head;
+
                 for (int i = 1; i < numbers.Length; i++)
                 {
                     current.next = new ListNode(numbers[i]);
                     current = current.next;
                 }
+
                 return head;
             }
 
@@ -20,11 +22,13 @@ namespace LeetCodeTraining.Tests
             {
                 ListNode current = node;
                 string result = "";
+
                 while (current != null)
                 {
                     result += current.val;
                     current = current.next;
                 }
+
                 return result;
             }
 
