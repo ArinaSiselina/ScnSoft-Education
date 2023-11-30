@@ -4,57 +4,47 @@ namespace LeetCodeTraining.Tests
 {
     public class AddTwoNumbersSolutionTest
     {
+            private ListNode InitializeNode(int[] numbers)
+            {
+                ListNode head = new ListNode(numbers[0]);
+                ListNode current = head;
+                for (int i = 1; i < numbers.Length; i++)
+                {
+                    current.next = new ListNode(numbers[i]);
+                    current = current.next;
+                }
+                return head;
+            }
 
-        [Fact]
-        public void AddTwoNumbers1()
-        {
-            // Arrange
-            ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
-            ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+            private string DisplayNode(ListNode node)
+            {
+                ListNode current = node;
+                string result = "";
+                while (current != null)
+                {
+                    result += current.val;
+                    current = current.next;
+                }
+                return result;
+            }
 
-            // Act
-            ListNode result = AddTwoNumbersSolution.AddTwoNumbers(l1, l2);
+            [Theory]
+            [InlineData(new int[] { 2, 4, 3 }, new int[] { 5, 6, 4 }, "708")]
+            [InlineData(new int[] { 0 }, new int[] { 0 }, "0")]
+            [InlineData(new int[] { 9, 9, 9, 9, 9, 9, 9 }, new int[] { 9, 9, 9, 9 }, "89990001")]
+            public void AddNumbers(int[] list1, int[] list2, string expectedResult)
+            {
+                //Arrange
+                ListNode l1 = InitializeNode(list1);
+                ListNode l2 = InitializeNode(list2);
 
-            // Assert
-            Assert.Equal(7, result.val);
-            Assert.Equal(0, result.next.val);
-            Assert.Equal(8, result.next.next.val);
+                //Act
+                ListNode resultNode = AddTwoNumbersSolution.AddTwoNumbers(l1, l2);
+                string result = DisplayNode(resultNode);
+
+                //Assert
+                Assert.Equal(expectedResult, result);
+            }
         }
-
-        [Fact]
-        public void AddTwoNumbers2()
-        {
-            // Arrange
-            ListNode l1 = new ListNode(0);
-            ListNode l2 = new ListNode(0);
-
-            // Act
-            ListNode result = AddTwoNumbersSolution.AddTwoNumbers(l1, l2);
-
-            // Assert
-            Assert.Equal(0, result.val);
-        }
-
-        [Fact]
-        public void AddTwoNumbers3()
-        {
-            // Arrange
-            ListNode l1 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
-            ListNode l2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
-
-            // Act
-            ListNode result = AddTwoNumbersSolution.AddTwoNumbers(l1, l2);
-
-            // Assert [8,9,9,9,0,0,0,1]
-            Assert.Equal(8, result.val);
-            Assert.Equal(9, result.next.val);
-            Assert.Equal(9, result.next.next.val);
-            Assert.Equal(9, result.next.next.next.val);
-            Assert.Equal(0, result.next.next.next.next.val);
-            Assert.Equal(0, result.next.next.next.next.next.val);
-            Assert.Equal(0, result.next.next.next.next.next.next.val);
-            Assert.Equal(1, result.next.next.next.next.next.next.next.val);
-        }
-
     }
-}
+

@@ -1,7 +1,7 @@
 ﻿
 namespace LeetCodeTraining.AddTwoNumbers
 {
-    // https://leetcode.com/problems/string-to-integer-atoi/
+    // https://leetcode.com/problems/add-two-numbers/
     public class ListNode
     {
         public int val;
@@ -12,12 +12,13 @@ namespace LeetCodeTraining.AddTwoNumbers
             this.next = next;
         }
     }
+
     public class AddTwoNumbersSolution
     { 
         public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
-            ListNode result = new ListNode(0);
-            ListNode one = l1, two = l2, curr = result;
+            ListNode preResult = new ListNode();
+            ListNode one = l1, two = l2, curr = preResult;
             int remember = 0;
 
             while (one != null || two != null)
@@ -40,7 +41,7 @@ namespace LeetCodeTraining.AddTwoNumbers
                 curr.next = new ListNode(remember);
             }
 
-            return result.next;
+            return preResult.next;
         }
     }
 }
