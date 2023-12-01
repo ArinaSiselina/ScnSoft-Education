@@ -14,7 +14,7 @@ namespace LeetCodeTraining.AddTwoNumbers
     }
 
     public class AddTwoNumbersSolution
-    { 
+    {
         public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
             ListNode preResult = new ListNode();
