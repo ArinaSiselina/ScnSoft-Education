@@ -1,6 +1,4 @@
-﻿
-namespace LeetCodeTraining.ContainerWithMostWater
-
+﻿namespace LeetCodeTraining.ContainerWithMostWater
 {
     // https://leetcode.com/problems/container-with-most-water/
     public class ContainerWithMostWaterSolution
