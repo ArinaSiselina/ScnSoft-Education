@@ -9,10 +9,11 @@
                 return "";
 
             Array.Sort(strs);
-            int length = Math.Min(strs[0].Length, strs[strs.Length - 1].Length);
 
+            int lengthMin = strs[0].Length;
             int i = 0;
-            while (i < length && strs[0][i] == strs[strs.Length - 1][i])
+
+            while (i < lengthMin && strs[0][i] == strs[strs.Length - 1][i])
             {
                 i++;
             }
