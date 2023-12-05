@@ -26,12 +26,10 @@
                             left++;
                             right--;
                         }
-
                         else if (nums[left] + nums[right] < target)
                         {
                             left++;
                         }
-
                         else
                         {
                             right--;
