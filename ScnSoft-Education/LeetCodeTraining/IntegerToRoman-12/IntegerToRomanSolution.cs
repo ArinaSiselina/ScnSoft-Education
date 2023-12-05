@@ -11,6 +11,7 @@ namespace LeetCodeTraining.IntegerToRoman
             string[] romans = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
             StringBuilder result = new StringBuilder();
             int i = 0;
+
             while (num > 0)
             {
                 int div = num / ints[i];
@@ -21,6 +22,7 @@ namespace LeetCodeTraining.IntegerToRoman
                 }
                 i++;
             }
+
             return result.ToString();
         }
     }
