@@ -3,7 +3,7 @@
     //https://leetcode.com/problems/letter-combinations-of-a-phone-number/
     public class LetterCombinationsOfAPhoneNumberSolution
     {
-        public IList<string> LetterCombinations(string digits)
+        public static IList<string> LetterCombinations(string digits)
         {
             if (string.IsNullOrEmpty(digits))
                 return new List<string>();
@@ -26,7 +26,7 @@
             return result;
         }
 
-        private void Backtrack(string combination, string nextDigits, Dictionary<char, string> digitToLetters, IList<string> result)
+        private static void Backtrack(string combination, string nextDigits, Dictionary<char, string> digitToLetters, IList<string> result)
         {
             if (nextDigits.Length == 0)
             {
