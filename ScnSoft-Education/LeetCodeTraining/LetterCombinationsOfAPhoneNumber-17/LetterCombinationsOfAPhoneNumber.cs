@@ -3,12 +3,7 @@
     //https://leetcode.com/problems/letter-combinations-of-a-phone-number/
     public class LetterCombinationsOfAPhoneNumberSolution
     {
-        public static IList<string> LetterCombinations(string digits)
-        {
-            if (string.IsNullOrEmpty(digits))
-                return new List<string>();
-
-            Dictionary<char, string> digitToLetters = new Dictionary<char, string>()
+        private static Dictionary<char, string> digitToLetters = new Dictionary<char, string>()
         {
             {'2', "abc"},
             {'3', "def"},
@@ -19,6 +14,10 @@
             {'8', "tuv"},
             {'9', "wxyz"}
         };
+        public static IList<string> LetterCombinations(string digits)
+        {
+            if (string.IsNullOrEmpty(digits))
+                return new List<string>();
 
             IList<string> result = new List<string>();
             Backtrack("", digits, digitToLetters, result);
@@ -31,16 +30,15 @@
             if (nextDigits.Length == 0)
             {
                 result.Add(combination);
+                return;
             }
-            else
+
+            char digit = nextDigits[0];
+            string letters = digitToLetters[digit];
+            for (int i = 0; i < letters.Length; i++)
             {
-                char digit = nextDigits[0];
-                string letters = digitToLetters[digit];
-                for (int i = 0; i < letters.Length; i++)
-                {
-                    string letter = letters[i].ToString();
-                    Backtrack(combination + letter, nextDigits.Substring(1), digitToLetters, result);
-                }
+                string letter = letters[i].ToString();
+                Backtrack(combination + letter, nextDigits.Substring(1), digitToLetters, result);
             }
         }
     }
