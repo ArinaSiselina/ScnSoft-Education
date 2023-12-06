@@ -12,7 +12,7 @@ namespace LeetCodeTraining.Tests
             var result = ThreeSumSolution.ThreeSum(nums);
 
             // Assert
-            Assert.Equal(expectedResult.Count, result.Count);
+            Assert.Equal(expectedResult, result);
 
             for (int i = 0; i < result.Count; i++)
             {
