@@ -32,13 +32,11 @@ namespace LeetCodeTraining.Tests
                     new List<int> { -1, 0, 1 }
                 }
             },
-
             new object[]
             {
                 new int[] { 0, 1, 1 },
                 new List<IList<int>> { }
             },
-
             new object[]
             {
                 new int[] { 0, 0, 0 },
