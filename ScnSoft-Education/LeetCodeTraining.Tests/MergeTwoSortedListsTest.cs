@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using LeetCodeTraining.MergeTwoSortedLists;
-using Xunit;
+﻿using LeetCodeTraining.MergeTwoSortedLists;
 
 namespace LeetCodeTraining.Tests
 {
