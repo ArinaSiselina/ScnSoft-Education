@@ -13,11 +13,6 @@ namespace LeetCodeTraining.Tests
 
             // Assert
             Assert.Equal(expectedResult, result);
-
-            for (int i = 0; i < result.Count; i++)
-            {
-                Assert.Equal(expectedResult[i], result[i]);
-            }
         }
 
         public static IEnumerable<object[]> Data =>
@@ -45,9 +40,3 @@ namespace LeetCodeTraining.Tests
         };
     }
 }
-
-
-
-
-
-
