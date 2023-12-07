@@ -16,7 +16,7 @@
     {
         public static ListNode RemoveNthFromEnd(ListNode head, int n)
         {
-            ListNode result = new ListNode(0);
+            ListNode result = new ListNode();
             result.next = head;
 
             ListNode first = result;
