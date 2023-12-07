@@ -14,18 +14,19 @@
             {'8', "tuv"},
             {'9', "wxyz"}
         };
+
         public static IList<string> LetterCombinations(string digits)
         {
             if (string.IsNullOrEmpty(digits))
                 return new List<string>();
 
             IList<string> result = new List<string>();
-            Backtrack("", digits, digitToLetters, result);
 
+            Backtrack("", digits, result);
             return result;
         }
 
-        private static void Backtrack(string combination, string nextDigits, Dictionary<char, string> digitToLetters, IList<string> result)
+        private static void Backtrack(string combination, string nextDigits, IList<string> result)
         {
             if (nextDigits.Length == 0)
             {
@@ -35,10 +36,11 @@
 
             char digit = nextDigits[0];
             string letters = digitToLetters[digit];
+
             for (int i = 0; i < letters.Length; i++)
             {
                 string letter = letters[i].ToString();
-                Backtrack(combination + letter, nextDigits.Substring(1), digitToLetters, result);
+                Backtrack(combination + letter, nextDigits.Substring(1),  result);
             }
         }
     }
