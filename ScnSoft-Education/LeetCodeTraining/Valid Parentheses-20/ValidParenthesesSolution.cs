@@ -1,6 +1,6 @@
 ﻿namespace LeetCodeTraining.ValidParentheses
 {
-    //https://leetcode.com/problems/palindrome-number/
+    //https://leetcode.com/problems/valid-parentheses/
     public class ValidParenthesesSolution
     {
         public static bool IsValid(string s)
@@ -12,21 +12,21 @@
                 if (bracket == '(' || bracket == '{' || bracket == '[')
                 {
                     stack.Push(bracket);
+                    continue;
                 }
-                else
-                {
-                    if (stack.Count == 0 || (bracket == ')' && stack.Peek() != '(') ||
-                       (bracket == '}' && stack.Peek() != '{') ||
-                       (bracket == ']' && stack.Peek() != '['))
-                    {
-                        return false;
-                    }
 
-                    stack.Pop();
+                if (!stack.Any() ||
+                    (bracket == ')' && stack.Peek() != '(') ||
+                    (bracket == '}' && stack.Peek() != '{') ||
+                    (bracket == ']' && stack.Peek() != '['))
+                {
+                    return false;
                 }
+
+                stack.Pop();
             }
 
-            return stack.Count == 0;
+            return !stack.Any();
         }
     }
 }
