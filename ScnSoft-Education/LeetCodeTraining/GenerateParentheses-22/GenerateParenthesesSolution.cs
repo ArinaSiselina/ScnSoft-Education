@@ -1,13 +1,13 @@
 ﻿namespace LeetCodeTraining.GenerateParentheses
 {
     // https://leetcode.com/problems/generate-parentheses/
-
     public class GenerateParenthesesSolution
     {
         public static IList<string> GenerateParentheses(int n)
         {
             IList<string> result = new List<string>();
-            Backtrack(result, "", 0, 0, n);
+            Backtrack(result, string.Empty, 0, 0, n);
+
             return result;
         }
 
