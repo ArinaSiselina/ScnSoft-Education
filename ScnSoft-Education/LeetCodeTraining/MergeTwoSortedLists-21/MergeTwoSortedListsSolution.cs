@@ -52,23 +52,6 @@
 
             return currentThis == null && currentOther == null;
         }
-
-        /*public override int GetHashCode()
-        {
-            unchecked
-            {
-                int hash = 17;
-                ListNode current = this;
-
-                while (current != null)
-                {
-                    hash = hash * 23 + current.val.GetHashCode();
-                    current = current.next;
-                }
-
-                return hash;
-            }
-        }*/
     }
 
     public class MergeTwoSortedListsSolution
