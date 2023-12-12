@@ -77,7 +77,7 @@
                 current = current.next;
             }
 
-            current.next = (list1 != null) ? list1 : list2;
+            current = (list1 != null) ? list1 : list2;
 
             return result.next;
         }
