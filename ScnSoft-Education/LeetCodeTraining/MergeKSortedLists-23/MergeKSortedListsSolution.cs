@@ -5,10 +5,40 @@
     {
         public int val;
         public ListNode next;
+
         public ListNode(int val = 0, ListNode next = null)
         {
             this.val = val;
             this.next = next;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            ListNode other = (ListNode)obj;
+            ListNode currentThis = this;
+            ListNode currentOther = other;
+
+            while (currentThis != null && currentOther != null)
+            {
+                if (currentThis.val != currentOther.val)
+                {
+                    return false;
+                }
+                currentThis = currentThis.next;
+                currentOther = currentOther.next;
+            }
+
+            return currentThis == null && currentOther == null;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 
@@ -29,7 +59,7 @@
                 interval *= 2;
             }
 
-            return lists.Length > 0 ? lists[0] : null;
+            return lists[0];
         }
 
         private static ListNode MergeTwoLists(ListNode l1, ListNode l2)
@@ -52,14 +82,7 @@
                 current = current.next;
             }
 
-            if (l1 != null)
-            {
-                current.next = l1;
-            }
-            else if (l2 != null)
-            {
-                current.next = l2;
-            }
+            current.next = l1 == null ? l2 : l1;
 
             return result.next;
         }
