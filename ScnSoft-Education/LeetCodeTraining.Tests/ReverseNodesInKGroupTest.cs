@@ -21,7 +21,7 @@ namespace LeetCodeTraining.Tests
         private string DisplayNode(ListNode node)
         {
             ListNode current = node;
-            string result = "";
+            string result = string.Empty;
 
             while (current != null)
             {

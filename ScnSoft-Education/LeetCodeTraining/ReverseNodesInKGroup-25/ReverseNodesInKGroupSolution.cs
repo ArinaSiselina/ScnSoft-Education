@@ -16,8 +16,7 @@
     {
         public static ListNode ReverseKGroup(ListNode head, int k)
         {
-            ListNode result = new ListNode(0);
-            result.next = head;
+            ListNode result = new ListNode(0, head);
 
             ListNode prev = result;
             ListNode end = result;
