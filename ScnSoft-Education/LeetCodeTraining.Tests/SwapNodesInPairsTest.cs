@@ -24,7 +24,7 @@ namespace LeetCodeTraining.Tests
         {
             if (node == null) return string.Empty;
             ListNode current = node;
-            string result = "";
+            string result = string.Empty;
 
             while (current != null)
             {
