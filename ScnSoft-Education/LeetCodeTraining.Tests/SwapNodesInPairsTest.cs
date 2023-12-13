@@ -6,7 +6,8 @@ namespace LeetCodeTraining.Tests
     {
         private ListNode InitializeNode(int[] numbers)
         {
-            if (numbers.Length==0) return null;
+            if (numbers.Length == 0) return null;
+
             ListNode head = new ListNode(numbers[0]);
             ListNode current = head;
 
@@ -21,7 +22,7 @@ namespace LeetCodeTraining.Tests
 
         private string DisplayNode(ListNode node)
         {
-            if (node == null) return "";
+            if (node == null) return string.Empty;
             ListNode current = node;
             string result = "";
 
