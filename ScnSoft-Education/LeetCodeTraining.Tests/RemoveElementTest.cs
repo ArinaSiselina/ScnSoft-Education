@@ -5,15 +5,20 @@ namespace LeetCodeTraining.Tests
     public class RemoveElementSolutionTest
     {
         [Theory]
-        [InlineData(new int[] { 3, 2, 2, 3 }, 3, 2)]
-        [InlineData(new int[] { 0, 1, 2, 2, 3, 0, 4, 2 }, 2, 5)]
-        public void RemoveElement(int[] nums, int val, int expectedResult)
+        [InlineData(new int[] { 3, 2, 2, 3 }, 3, 2, new int[] { 2, 2 }, 2)]
+        [InlineData(new int[] { 0, 1, 2, 2, 3, 0, 4, 2 }, 2, 5, new int[] { 0, 1, 3, 0, 4 }, 5)]
+        public void RemoveElement(int[] nums, int val, int expectedLength, int[] expectedArray, int expectedUniqueCount)
         {
             //Act
-            int result = RemoveElementSolution.RemoveElement(nums, val);
+            int resultLength = RemoveElementSolution.RemoveElement(nums, val);
 
             //Assert
-            Assert.Equal(expectedResult, result);
+            Assert.Equal(expectedLength, resultLength);
+
+            for (int i = 0; i < resultLength; i++)
+            {
+                Assert.NotEqual(val, nums[i]);
+            }
         }
     }
 }

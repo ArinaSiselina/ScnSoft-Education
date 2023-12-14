@@ -11,10 +11,7 @@
             {
                 if (nums[i] != val)
                 {
-                    int temp = nums[k];
-                    nums[k] = nums[i];
-                    nums[i] = temp;
-                    k++;
+                    nums[k++] = nums[i];
                 }
             }
 
