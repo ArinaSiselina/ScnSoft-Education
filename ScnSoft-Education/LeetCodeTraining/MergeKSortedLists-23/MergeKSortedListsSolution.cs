@@ -12,6 +12,25 @@
             this.next = next;
         }
 
+        // Constructor to initialize ListNode with int array
+        public ListNode(int[] values)
+        {
+            if (values == null || values.Length == 0)
+            {
+                return;
+            }
+
+            this.val = values[0];
+            ListNode current = this;
+
+            for (int i = 1; i < values.Length; i++)
+            {
+                current.next = new ListNode(values[i]);
+                current = current.next;
+            }
+        }
+
+        // Override Equals to compare ListNode objects directly
         public override bool Equals(object obj)
         {
             if (obj == null || GetType() != obj.GetType())

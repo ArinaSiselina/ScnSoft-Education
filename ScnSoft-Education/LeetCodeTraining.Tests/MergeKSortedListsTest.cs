@@ -9,7 +9,7 @@ namespace LeetCodeTraining.Tests
         public void MergeKLists(ListNode[] input, ListNode expected)
         {
             // Act
-            var result = MergeKSortedListsSolution.MergeKLists(input);
+            ListNode result = MergeKSortedListsSolution.MergeKLists(input);
 
             // Assert
             Assert.Equal(expected, result);
@@ -21,11 +21,11 @@ namespace LeetCodeTraining.Tests
                 {
                     new ListNode[]
                     {
-                        new ListNode(1, new ListNode(4, new ListNode(5))),
-                        new ListNode(1, new ListNode(3, new ListNode(4))),
-                        new ListNode(2, new ListNode(6))
+                        new ListNode(new[] { 1, 4, 5 }),
+                        new ListNode(new[] { 1, 3, 4 }),
+                        new ListNode(new[] { 2, 6 })
                     },
-                    new ListNode(1, new ListNode(1, new ListNode(2,new ListNode(3, new ListNode(4,new ListNode(4, new ListNode(5, new ListNode(6))))))))
+                    new ListNode(new[] { 1, 1, 2, 3, 4, 4, 5, 6 })
                 },
                 { new ListNode[] { }, null},
                 { new ListNode[] { new ListNode() }, new ListNode()}
