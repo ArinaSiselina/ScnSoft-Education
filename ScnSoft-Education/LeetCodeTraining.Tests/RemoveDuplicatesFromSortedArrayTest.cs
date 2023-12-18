@@ -17,7 +17,7 @@ namespace LeetCodeTraining.Tests
 
             for (int i = 0; i < result; i++)
             {
-                Assert.Contains(nums[i], expectedUniqueValues);
+                Assert.Equal(nums[i], expectedUniqueValues[i]);
             }
         }
     }

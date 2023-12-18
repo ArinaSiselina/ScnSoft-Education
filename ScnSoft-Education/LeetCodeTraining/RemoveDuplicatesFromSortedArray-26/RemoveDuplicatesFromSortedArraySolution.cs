@@ -16,8 +16,7 @@
             {
                 if (nums[i] != nums[i - 1])
                 {
-                    k++;
-                    nums[k] = nums[i];
+                    nums[k++] = nums[i];
                 }
             }
 
