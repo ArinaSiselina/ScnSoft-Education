@@ -17,10 +17,7 @@
                 return (IsMatch(s, p.Substring(2)) || (firstMatch && IsMatch(s.Substring(1), p)));
             }
 
-            else
-            {
-                return firstMatch && IsMatch(s.Substring(1), p.Substring(1));
-            }
+            return firstMatch && IsMatch(s.Substring(1), p.Substring(1));
         }
     }
 }
