@@ -12,7 +12,6 @@ namespace LeetCodeTraining.Tests
         {
             // Arrange
             NextPermutationSolution solution = new NextPermutationSolution();
-            //int[] inputCopy = (int[])input.Clone();
 
             // Act
             solution.NextPermutation(input);
@@ -20,6 +19,5 @@ namespace LeetCodeTraining.Tests
             // Assert
             Assert.Equal(expectedResult, input);
         }
-        
     }
 }
