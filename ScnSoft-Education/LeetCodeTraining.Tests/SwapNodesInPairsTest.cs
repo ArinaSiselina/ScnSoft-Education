@@ -37,7 +37,7 @@ namespace LeetCodeTraining.Tests
 
         [Theory]
         [InlineData(new int[] { 1, 2, 3, 4 }, "2143")]
-        [InlineData(new int[] {}, "")]
+        [InlineData(new int[] { }, "")]
         [InlineData(new int[] { 1 }, "1")]
         public void SwapNodesInPairs(int[] list1, string expectedResult)
         {

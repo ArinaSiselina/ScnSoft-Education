@@ -16,7 +16,7 @@
     {
         public static ListNode SwapPairs(ListNode head)
         {
-            ListNode result = new ListNode(0,head);
+            ListNode result = new ListNode(0, head);
             ListNode current = result;
 
             while (current.next != null && current.next.next != null)
