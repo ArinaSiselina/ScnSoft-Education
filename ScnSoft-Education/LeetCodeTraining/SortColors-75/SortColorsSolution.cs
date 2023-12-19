@@ -6,30 +6,28 @@
         public static void SortColors(int[] nums)
         {
             int low = 0, mid = 0, high = nums.Length - 1;
-            int temp;
-
             while (mid <= high)
             {
                 switch (nums[mid])
                 {
                     case 0:
-                        temp = nums[low];
-                        nums[low] = nums[mid];
-                        nums[mid] = temp;
-                        low++;
-                        mid++;
+                        Swap(ref nums[low++], ref nums[mid++]);
                         break;
                     case 1:
                         mid++;
                         break;
                     case 2:
-                        temp = nums[high];
-                        nums[high] = nums[mid];
-                        nums[mid] = temp;
-                        high--;
+                        Swap(ref nums[mid], ref nums[high--]);
                         break;
                 }
             }
+        }
+
+        private static void Swap(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
         }
     }
 }
