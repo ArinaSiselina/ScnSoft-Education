@@ -12,7 +12,7 @@ namespace LeetCodeTraining.Tests
         {
             // Arrange
             NextPermutationSolution solution = new NextPermutationSolution();
-            int[] inputCopy = (int[])input.Clone();
+            //int[] inputCopy = (int[])input.Clone();
 
             // Act
             solution.NextPermutation(input);
