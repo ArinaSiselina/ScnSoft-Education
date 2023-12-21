@@ -1,4 +1,4 @@
-﻿namespace LeetCodeTraining.MergeKSortedLists
+﻿namespace LeetCodeTraining.MergeKSortedLists2
 {
     //https://leetcode.com/problems/merge-k-sorted-lists/
     public class ListNode
@@ -59,47 +59,34 @@
         }
     }
 
-    public class MergeKSortedListsSolution
+    public class MergeKSortedListsSolution2
     {
         public static ListNode MergeKLists(ListNode[] lists)
         {
-            if (lists.Length == 0)
-                return null;
+            PriorityQueue<ListNode, int> q = new PriorityQueue<ListNode, int>();
 
-            int interval = 1;
-            while (interval < lists.Length)
+            foreach (var l in lists)
             {
-                for (int i = 0; i + interval < lists.Length; i += interval * 2)
+                if (l != null)
                 {
-                    lists[i] = MergeTwoLists(lists[i], lists[i + interval]);
+                    q.Enqueue(l, l.val);
                 }
-                interval *= 2;
             }
 
-            return lists[0];
-        }
-
-        private static ListNode MergeTwoLists(ListNode l1, ListNode l2)
-        {
-            ListNode result = new ListNode(-1);
+            ListNode result = new ListNode(0);
             ListNode current = result;
 
-            while (l1 != null && l2 != null)
+            while (q.Count > 0)
             {
-                if (l1.val < l2.val)
-                {
-                    current.next = l1;
-                    l1 = l1.next;
-                }
-                else
-                {
-                    current.next = l2;
-                    l2 = l2.next;
-                }
+                var node = q.Dequeue();
+                current.next = new ListNode(node.val);
                 current = current.next;
-            }
 
-            current.next = l1 == null ? l2 : l1;
+                if (node.next != null)
+                {
+                    q.Enqueue(node.next, node.next.val);
+                }
+            }
 
             return result.next;
         }
