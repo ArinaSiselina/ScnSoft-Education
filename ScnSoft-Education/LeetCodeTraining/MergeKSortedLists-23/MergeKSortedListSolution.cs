@@ -12,7 +12,6 @@
             this.next = next;
         }
 
-        // Constructor to initialize ListNode with int array
         public ListNode(int[] values)
         {
             if (values == null || values.Length == 0)
@@ -30,7 +29,6 @@
             }
         }
 
-        // Override Equals to compare ListNode objects directly
         public override bool Equals(object obj)
         {
             if (obj == null || GetType() != obj.GetType())
